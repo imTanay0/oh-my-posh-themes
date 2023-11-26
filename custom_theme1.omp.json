@@ -1,0 +1,90 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "final_space": true,
+  "blocks": [
+    {
+      "type": "prompt",
+      "overflow": "hide",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "time",
+          "style": "plain",
+          "powerline_symbol": "\ue0b0",
+          "template": "\ue641 </>{{ .CurrentDate | date .Format }} ",
+          "foreground": "#0099cc",
+          "properties": {
+            "time_format": "3:04 PM"
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "session",
+          "style": "plain",
+          "foreground": "#02f339",
+          "template": "@{{ .UserName }} "
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#df5454",
+          "template": "➜"
+        },
+        {
+          "type": "path",
+          "style": "diamond",
+          "foreground": "#57e8fb",
+          "template": " {{ .Path }}",
+          "properties": {
+            "style": "folder"
+          }
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "#d075fb",
+          "template": " {{ .HEAD }}",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "cherry_pick_icon": "\ue29b ",
+            "commit_icon": "\uf417 ",
+            "fetch_status": false,
+            "fetch_upstream_icon": false,
+            "merge_icon": "\ue727 ",
+            "no_commits_icon": "\uf0c3 ",
+            "rebase_icon": "\ue728 ",
+            "revert_icon": "\uf0e2 ",
+            "tag_icon": "\uf412 "
+          }
+        },
+        {
+          "foreground": "#EFDCF9",
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "powerline",
+          "template": " {{.FormattedMs }}",
+          "type": "executiontime"
+        },
+        {
+          "style": "plain",
+          "foreground": "p:closer",
+          "template": " \uf105",
+          "type": "text"
+        },
+        {
+          "type": "status",
+          "style": "plain",
+          "foreground": "#f3ca41",
+          "template": " \uf119"
+        }
+      ]
+    }
+  ]
+}
